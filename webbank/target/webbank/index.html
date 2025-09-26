@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网上银行系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>网上银行系统</h1>
+        <div id="userInfo" style="display: none;">
+            <span id="welcomeMsg"></span>
+            <button onclick="logout()">注销</button>
+        </div>
+    </header>
+
+    <div id="loginSection">
+        <h2>用户登录</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUserNumber" placeholder="用户名" required>
+            <input type="password" id="loginPassword" placeholder="密码" required>
+            <button type="submit">登录</button>
+        </form>
+        <button onclick="showRegister()">没有账号？点击注册</button>
+    </div>
+
+    <div id="registerSection" style="display: none;">
+        <h2>用户注册</h2>
+        <form id="registerForm">
+            <input type="text" id="regUserNumber" placeholder="用户名" required>
+            <input type="password" id="regPassword" placeholder="密码" required>
+            <button type="submit">注册</button>
+        </form>
+        <button onclick="showLogin()">已有账号？点击登录</button>
+    </div>
+
+    <div id="mainSection" style="display: none;">
+        <nav>
+            <button onclick="showSection('accountManagement')">账户管理</button>
+            <button onclick="showSection('transaction')">交易操作</button>
+            <button onclick="showSection('passwordChange')">修改密码</button>
+        </nav>
+
+        <div id="accountManagement" class="section">
+            <h2>账户管理</h2>
+            <button onclick="createAccount()">创建新账户</button>
+            <button onclick="loadAccounts()">展示账户</button>
+            <div id="accountsList"></div>
+        </div>
+
+        <div id="transaction" class="section" style="display: none;">
+            <h2>交易操作</h2>
+            <div>
+                <h3>存款</h3>
+                <input type="text" id="depositAccount" placeholder="账户号码">
+                <input type="number" id="depositAmount" placeholder="金额">
+                <button onclick="deposit()">存款</button>
+            </div>
+            <div>
+                <h3>取款</h3>
+                <input type="text" id="withdrawAccount" placeholder="账户号码">
+                <input type="number" id="withdrawAmount" placeholder="金额">
+                <button onclick="withdraw()">取款</button>
+            </div>
+        </div>
+
+        <div id="passwordChange" class="section" style="display: none;">
+            <h2>修改密码</h2>
+            <input type="password" id="oldPassword" placeholder="旧密码">
+            <input type="password" id="newPassword" placeholder="新密码">
+            <button onclick="changePassword()">修改密码</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

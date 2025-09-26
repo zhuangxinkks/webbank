@@ -1,0 +1,6 @@
+com\webbank\model\User.class
+com\webbank\service\BankService.class
+com\webbank\controller\BankServlet.class
+com\webbank\model\Account.class
+com\webbank\dao\AccountDAO.class
+com\webbank\dao\UserDAO.class
